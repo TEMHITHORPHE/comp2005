@@ -14,19 +14,19 @@ func main() {
 
 	http.HandleFunc("/", greet)
 
-	http.HandleFunc("/add", Handlers.Admissions)
-	// http.HandleFunc("Admissions/{id}", Handlers.An_Admission)
+	http.HandleFunc("/Admissions", Handlers.Admissions)
+	http.HandleFunc("/Admissions/", Handlers.An_Admission)
 
 	http.HandleFunc("/Allocations", Handlers.Allocations)
-	// http.HandleFunc("Allocations/{id}", Handlers.An_Allocation)
+	http.HandleFunc("/Allocations/", Handlers.An_Allocation)
 
 	http.HandleFunc("/Employees", Handlers.Employees)
-	// http.HandleFunc("Employees/{id}", Handlers.An_Employee)
+	http.HandleFunc("/Employees/", Handlers.An_Employee)
 
 	http.HandleFunc("/Patients", Handlers.Patients)
-	// http.HandleFunc("Patients/{id}", Handlers.A_Patient)
+	http.HandleFunc("/Patients/", Handlers.A_Patient)
 
-	err := http.ListenAndServe(":8090", nil)
+	err := http.ListenAndServe(":7777", nil)
 	pr("Server Started: ", err)
 
 }
