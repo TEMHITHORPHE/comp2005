@@ -39,29 +39,29 @@ func GetAllAdmissions() []Admission {
 
 type Allocations []Allocation
 type Allocation struct {
-	id          int
-	admissionID int
-	employeeID  int
-	startTime   string
-	endTime     string
+	Id          int
+	AdmissionID int
+	EmployeeID  int
+	StartTime   string
+	EndTime     string
 }
 
 func GetAllAllocations() Allocations {
 
 	Allocations := Allocations{
 		{
-			id:          1,
-			admissionID: 1,
-			employeeID:  4,
-			startTime:   "2020-11-28T16:45:00",
-			endTime:     "2020-11-28T23:56:00",
+			Id:          1,
+			AdmissionID: 1,
+			EmployeeID:  4,
+			StartTime:   "2020-11-28T16:45:00",
+			EndTime:     "2020-11-28T23:56:00",
 		},
 		{
-			id:          2,
-			admissionID: 3,
-			employeeID:  4,
-			startTime:   "2021-09-23T21:50:00",
-			endTime:     "2021-09-24T09:50:00",
+			Id:          2,
+			AdmissionID: 3,
+			EmployeeID:  4,
+			StartTime:   "2021-09-23T21:50:00",
+			EndTime:     "2021-09-24T09:50:00",
 		},
 	}
 	fmt.Println("Models:", Allocations)
@@ -69,43 +69,43 @@ func GetAllAllocations() Allocations {
 }
 
 type Employee struct {
-	id       int
-	surname  string
-	forename string
+	Id       int
+	Surname  string
+	Forename string
 }
 
 func GetAllEmployees() []Employee {
 
 	Employees := []Employee{
 		{
-			id:       1,
-			surname:  "Finley",
-			forename: "Sarah",
+			Id:       1,
+			Surname:  "Finley",
+			Forename: "Sarah",
 		},
 		{
-			id:       2,
-			surname:  "Jackson",
-			forename: "Robert",
+			Id:       2,
+			Surname:  "Jackson",
+			Forename: "Robert",
 		},
 		{
-			id:       3,
-			surname:  "Allen",
-			forename: "Alice",
+			Id:       3,
+			Surname:  "Allen",
+			Forename: "Alice",
 		},
 		{
-			id:       4,
-			surname:  "Jones",
-			forename: "Sarah",
+			Id:       4,
+			Surname:  "Jones",
+			Forename: "Sarah",
 		},
 		{
-			id:       5,
-			surname:  "Wicks",
-			forename: "Patrick",
+			Id:       5,
+			Surname:  "Wicks",
+			Forename: "Patrick",
 		},
 		{
-			id:       6,
-			surname:  "Smith",
-			forename: "Alice",
+			Id:       6,
+			Surname:  "Smith",
+			Forename: "Alice",
 		},
 	}
 	println(Employees)
@@ -113,32 +113,32 @@ func GetAllEmployees() []Employee {
 }
 
 type Patient struct {
-	id        int
-	surname   string
-	forename  string
-	nhsNumber string
+	Id        int
+	Surname   string
+	Forename  string
+	NhsNumber string
 }
 
 func GetAllPatients() []Patient {
 
 	Patients := []Patient{
 		{
-			id:        1,
-			surname:   "Robinson",
-			forename:  "Viv",
-			nhsNumber: "1113335555",
+			Id:        1,
+			Surname:   "Robinson",
+			Forename:  "Viv",
+			NhsNumber: "1113335555",
 		},
 		{
-			id:        2,
-			surname:   "Carter",
-			forename:  "Heather",
-			nhsNumber: "2224446666",
+			Id:        2,
+			Surname:   "Carter",
+			Forename:  "Heather",
+			NhsNumber: "2224446666",
 		},
 		{
-			id:        3,
-			surname:   "Barnes",
-			forename:  "Nicky",
-			nhsNumber: "6663338888",
+			Id:        3,
+			Surname:   "Barnes",
+			Forename:  "Nicky",
+			NhsNumber: "6663338888",
 		},
 	}
 
