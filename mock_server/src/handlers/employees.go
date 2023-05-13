@@ -10,7 +10,6 @@ func Employees(response http.ResponseWriter, req *http.Request) {
 
 	if req.Method == "GET" {
 
-		// var Employees []model.Employee;
 		Employees := model.GetAllEmployees()
 		sendJSONRespose(response, Employees)
 
