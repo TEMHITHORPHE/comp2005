@@ -6,15 +6,31 @@ import (
 )
 
 func An_Admission(response http.ResponseWriter, req *http.Request) {
-	pr("[An_Admission]: ", req)
+	pr("[An_Admission]: ", req.URL)
 
-	if req.Method == "GET" {
+	ID, err := extractID(req.URL.Path)
+	if req.Method == "GET" && err == nil {
 
-		// var Admissions []model.Admisson;
+		ID_found := false
+		var Adm model.Admission
 		Admissions := model.GetAllAdmissions()
-		sendJSONRespose(response, Admissions)
+
+		for _, admission := range Admissions {
+			if admission.Id == ID {
+				Adm = admission
+				ID_found = true
+				break
+			}
+		}
+
+		if ID_found {
+			sendJSONRespose(response, Adm)
+		} else {
+			response.WriteHeader(404)
+		}
 
 	} else {
+		pr(err)
 		response.WriteHeader(403)
 	}
 }
