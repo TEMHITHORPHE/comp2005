@@ -11,7 +11,6 @@ func EmployeePatients(w http.ResponseWriter, r *http.Request) {
 	if r.Method == http.MethodGet {
 		employeeID, err := extractIDFromPath(r.URL.Path)
 		if err != nil {
-			// errorResponse(w, err, http.StatusBadRequest)
 			w.WriteHeader(http.StatusBadRequest)
 			return
 		}
