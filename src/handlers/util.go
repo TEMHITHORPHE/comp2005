@@ -75,11 +75,3 @@ func errorResponse(w http.ResponseWriter, err error, httpStatusCode int) {
 	pr(err)
 	w.WriteHeader(httpStatusCode)
 }
-
-func DayOfMaximumAdmissions(w http.ResponseWriter, r *http.Request) {
-
-}
-
-func EmployeePatientsDurationAverage(w http.ResponseWriter, r *http.Request) {
-
-}
