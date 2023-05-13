@@ -14,17 +14,17 @@ func main() {
 
 	http.HandleFunc("/", greet)
 
-	http.HandleFunc("/Admissions", Handlers.Admissions)
-	http.HandleFunc("/Admissions/", Handlers.An_Admission)
+	http.HandleFunc("/admissions", Handlers.Admissions)
+	http.HandleFunc("/admission/", Handlers.An_Admission)
 
-	http.HandleFunc("/Allocations", Handlers.Allocations)
-	http.HandleFunc("/Allocations/", Handlers.An_Allocation)
+	http.HandleFunc("/allocations", Handlers.Allocations)
+	http.HandleFunc("/allocation/", Handlers.An_Allocation)
 
-	http.HandleFunc("/Employees", Handlers.Employees)
-	http.HandleFunc("/Employees/", Handlers.An_Employee)
+	http.HandleFunc("/employees", Handlers.Employees)
+	http.HandleFunc("/employee/", Handlers.An_Employee)
 
-	http.HandleFunc("/Patients", Handlers.Patients)
-	http.HandleFunc("/Patients/", Handlers.A_Patient)
+	http.HandleFunc("/patients", Handlers.Patients)
+	http.HandleFunc("/patient/", Handlers.A_Patient)
 
 	err := http.ListenAndServe(":7777", nil)
 	pr("Server Started: ", err)
