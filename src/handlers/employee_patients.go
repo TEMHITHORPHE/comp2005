@@ -110,19 +110,35 @@ func EmployeePatients(w http.ResponseWriter, r *http.Request) {
 		// it seems this employee actually has patients assigned,
 		// and I just need to get full patients details (We already have em IDs).
 
-		w.Write([]byte("Ran to the end!!!"))
+		// Retrieve all Patients
+		res, err = http.Get(ALL_PATIENTS_ENDPOINT)
+		if err != nil || res.StatusCode != http.StatusOK {
+			errorResponse(w, err, http.StatusServiceUnavailable)
+			return
+		}
+
+		var patients []model.Patient
+		err = readJSONResponse(res, &patients)
+		if err != nil {
+			pr(err)
+			w.WriteHeader(http.StatusServiceUnavailable)
+			return
+		}
+
+		pr("Patients:", patients)
+
+		// Filter patients belonging to the employee only and retrieve the relevant patient Info.
+		patientsInfo := make([]model.Patient, len(employeePatientsIDs))
+		for _, patient := range patients {
+			if sliceContains(employeePatientsIDs, patient.Id) { // Which patient belongs(is assigned) to this employee?
+				patientsInfo = append(patientsInfo, patient) // extract full Patient Info.
+			}
+		}
+
+		sendJSONRespose(w, patientsInfo)
+		return
 
 	} else {
 		w.WriteHeader(http.StatusMethodNotAllowed)
 	}
-}
-
-// Can't believe golang doesn't provide these out!tha!!freaking!!!box!!
-func sliceContains(haystack []int, needle int) bool {
-	for i := 0; i < len(haystack); i++ {
-		if needle == haystack[i] {
-			return true
-		}
-	}
-	return false
 }
