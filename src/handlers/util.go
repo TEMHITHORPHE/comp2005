@@ -9,25 +9,6 @@ import (
 	"strings"
 )
 
-const (
-	HOSTED_SERVER_BASE_URL = "http://localhost:8090"
-	MOCK_SERVER_BASE_URL   = "http://localhost:7777"
-
-	ALL_ADMISSIONS_ENDPOINT    = MOCK_SERVER_BASE_URL + "/admissions"
-	SINGLE_ADMISSION_ENDPOINT  = MOCK_SERVER_BASE_URL + "/admission/"
-	ALL_ALLOCATIONS_ENDPOINT   = MOCK_SERVER_BASE_URL + "/allocations"
-	SINGLE_ADMISSIONS_ENDPOINT = MOCK_SERVER_BASE_URL + "/allocation/"
-	ALL_PATIENTS_ENDPOINT      = MOCK_SERVER_BASE_URL + "/patients"
-	SINGLE_PATIENT_ENDPOINT    = MOCK_SERVER_BASE_URL + "/patient/"
-	ALL_EMPLOYEES_ENDPOINT     = MOCK_SERVER_BASE_URL + "/employees"
-	SINGLE_EMPLOYEE_ENDPOINT   = MOCK_SERVER_BASE_URL + "/employee/"
-
-	EMPLOYEE_PATIENTS_ENDPOINT          = HOSTED_SERVER_BASE_URL + "/employee/patients/"
-	PATIENT_ADMISSION_DURATION_ENDPOINT = HOSTED_SERVER_BASE_URL + "/patients/admissions/duration/3"
-	DAY_OF_MAXIMUM_ADMISSIONS_ENDPOINT  = HOSTED_SERVER_BASE_URL + "/patients/admissions/maxday/"
-	EMPLOYEE_PATIENTS_DURATION_AVERAGE  = HOSTED_SERVER_BASE_URL + "/employee/patients/average/duration"
-)
-
 var pr = fmt.Println
 
 func readJSONResponse(res *http.Response, concreteType any) error {
