@@ -30,7 +30,11 @@ func readJSONResponse(res *http.Response, concreteType any) error {
 }
 
 func sendJSONRespose(response http.ResponseWriter, json_data any) {
-	json_response, _ := json.Marshal(json_data)
+	json_response, err := json.Marshal(json_data)
+	if err != nil {
+		pr(err)
+		response.WriteHeader(http.StatusServiceUnavailable)
+	}
 	response.Header().Add("content-type", "application/json")
 	response.Write(json_response)
 }
