@@ -8,7 +8,7 @@ type Admission struct {
 }
 
 type Allocation struct {
-	Id          int `json:"id"`
+	Id          int
 	AdmissionID int
 	EmployeeID  int
 	StartTime   string
