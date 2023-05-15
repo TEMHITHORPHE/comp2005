@@ -11,6 +11,8 @@ import (
 
 var pr = fmt.Println
 
+const ADMISSION_DATE_LAYOUT = "2006-01-02T15:04:05"
+
 func readJSONResponse(res *http.Response, concreteType any) error {
 	content := make([]byte, res.ContentLength)
 
