@@ -17,7 +17,7 @@ func main() {
 
 	http.HandleFunc("/employee/patients/", handlers.EmployeePatients)
 	http.HandleFunc("/patients/admissions/duration/3", handlers.PatientsAdmissionDuration)
-	http.HandleFunc("/patients/admissions/maxday/", handlers.DayOfMaximumAdmissions)
+	http.HandleFunc("/patients/admissions/maxday/", handlers.WeekDayOfMaximumAdmissions)
 	http.HandleFunc("/employee/patients/average/duration/", handlers.EmployeePatientsDurationAverage)
 
 	http.ListenAndServe(":8080", nil)
