@@ -8,8 +8,6 @@ import (
 	"time"
 )
 
-const ADMISSION_DATE_LAYOUT = "2006-01-02T15:04:05"
-
 func EmployeePatientsDurationAverage(w http.ResponseWriter, r *http.Request) {
 
 	if r.Method == http.MethodGet {
