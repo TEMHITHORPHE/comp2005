@@ -12,7 +12,7 @@ func PatientsAdmissionDuration(w http.ResponseWriter, r *http.Request) {
 
 	if r.Method == http.MethodGet {
 
-		// Extract duration ... should have been passed in form of "days"
+		// Extract duration ... should have been passed in form of "days".
 		durationID, err := extractIDFromPath(r.URL.Path)
 		if err != nil {
 			w.WriteHeader(http.StatusBadRequest)
